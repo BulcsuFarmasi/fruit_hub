@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:fruit_hub/app_routes.dart';
 import 'package:fruit_hub/basket_screen.dart';
-import 'package:fruit_hub/food_detail_screen.dart';
+import 'package:fruit_hub/product_detail_screen.dart';
 import 'package:fruit_hub/home_screen.dart';
 import 'package:fruit_hub/order_tracking_screen.dart';
 import 'package:fruit_hub/products_screen.dart';
@@ -44,7 +44,7 @@ class App extends StatelessWidget {
       home: HomeScreen(),
       routes: {
         "${AppRoute.foodDetail}": (BuildContext context) =>
-            const FoodDetailScreen(),
+            const ProductDetailScreen(),
         "${AppRoute.welcome}": (BuildContext context) => const WelcomeScreen(),
         "${AppRoute.basket}": (BuildContext context) => BasketScreen(),
         "${AppRoute.successfulOrder}": (BuildContext context) => const SuccessfulOrderScreen(),

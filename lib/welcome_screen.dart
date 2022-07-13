@@ -52,11 +52,12 @@ class StartPage extends StatelessWidget {
         children: [
           Container(
             height: 479,
+            width: double.infinity,
             padding: const EdgeInsets.fromLTRB(46, 155, 46, 54),
             decoration:
                 BoxDecoration(color: Theme.of(context).colorScheme.primary),
             child: Image.asset(
-              'assets/images/basket-1.png',
+              'assets/images/basket1.png',
               width: 301,
             ),
           ),
@@ -111,11 +112,12 @@ class InputPage extends StatelessWidget {
           children: [
             Container(
               height: 479,
+              width: double.infinity,
               padding: const EdgeInsets.fromLTRB(46, 155, 46, 54),
               decoration:
                   BoxDecoration(color: Theme.of(context).colorScheme.primary),
               child: Image.asset(
-                'assets/images/basket-2.png',
+                'assets/images/basket2.png',
                 width: 301,
               ),
             ),

@@ -3,7 +3,9 @@ import 'package:fruit_hub/app_colors.dart';
 import 'package:fruit_hub/recommended_product.dart';
 
 class ProductView extends StatefulWidget {
-  const ProductView({Key? key, required this.product, required this.backgroundColor}) : super(key: key);
+  const ProductView(
+      {Key? key, required this.product, required this.backgroundColor})
+      : super(key: key);
 
   final Product product;
   final Color backgroundColor;
@@ -13,35 +15,46 @@ class ProductView extends StatefulWidget {
 }
 
 class _ProductState extends State<ProductView> {
+  bool isFavorite = false;
+
+  void toggleIsFavorite() {
+    setState(() {
+      isFavorite = !isFavorite;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Container(
         width: 140,
         height: 150,
         padding: EdgeInsets.all(10),
-        decoration:
-        BoxDecoration(borderRadius: BorderRadius.circular(10), color: widget.backgroundColor),
+        decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(10),
+            color: widget.backgroundColor),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Expanded(
               child: Stack(
                 children: [
-                  Positioned(
-                      top: 9,
-                      left: 28,
+                  Align(
+                      alignment: Alignment.center,
                       child: Image.asset(
                         widget.product.imagePath,
                         width: 64,
                       )),
-                  Positioned(
-                      top: 6,
-                      right: 6,
+                  Align(
+                    alignment: Alignment.topRight,
+                    child: GestureDetector(
+                      onTap: toggleIsFavorite,
                       child: Icon(
-                        Icons.favorite_outline,
+                        isFavorite ? Icons.favorite : Icons.favorite_outline,
                         size: 16,
                         color: Theme.of(context).colorScheme.primary,
-                      ))
+                      ),
+                    ),
+                  )
                 ],
               ),
             ),
@@ -54,7 +67,7 @@ class _ProductState extends State<ProductView> {
                   widget.product.name,
                   style: TextStyle(
                       color: textColor,
-                      fontSize: 16,
+                      fontSize: 14,
                       fontWeight: FontWeight.w500),
                 )),
             SizedBox(
