@@ -27,7 +27,7 @@ class ProductsScreen extends StatelessWidget {
             child: Column(
               children: [
                 Image.asset(
-                  'assets/images/basket-icon.png',
+                  'assets/images/basket_icon.png',
                   width: 24,
                   height: 24,
                 ),

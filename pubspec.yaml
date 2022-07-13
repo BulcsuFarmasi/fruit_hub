@@ -64,8 +64,8 @@ flutter:
      - assets/images/quinoa.png
      - assets/images/melon.png
      - assets/images/tropical.png
-     - assets/images/basket-1.png
-     - assets/images/basket-2.png
+     - assets/images/basket1.png
+     - assets/images/basket2.png
      - assets/images/success.png
      - assets/images/success_border.png
      - assets/images/order_prepared.png
@@ -75,7 +75,7 @@ flutter:
      - assets/images/waiting.png
      - assets/images/map.png
      - assets/images/menu.png
-     - assets/images/basket-icon.png
+     - assets/images/basket_icon.png
      - assets/images/filter.png
      - assets/images/honey_lime.png
      - assets/images/berry_mango.png

@@ -12,6 +12,15 @@ class RecommendedProduct extends StatefulWidget {
 }
 
 class _RecommendedProductState extends State<RecommendedProduct> {
+
+  bool isFavorite = false;
+
+  void toggleIsFavorite () {
+    setState(() {
+      isFavorite = !isFavorite;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -39,10 +48,13 @@ class _RecommendedProductState extends State<RecommendedProduct> {
                   Positioned(
                       top: 16,
                       right: 16,
-                      child: Icon(
-                        Icons.favorite_outline,
-                        size: 16,
-                        color: Theme.of(context).colorScheme.primary,
+                      child: GestureDetector(
+                        onTap: toggleIsFavorite,
+                        child: Icon(
+                          isFavorite ? Icons.favorite : Icons.favorite_outline,
+                          size: 16,
+                          color: Theme.of(context).colorScheme.primary,
+                        ),
                       ))
                 ],
               ),
