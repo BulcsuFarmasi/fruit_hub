@@ -37,7 +37,7 @@ class BasketScreen extends StatelessWidget {
           margin: EdgeInsets.only(left: 24),
           child: const CustomBackButton(),
         ),
-        leadingWidth: 124,
+        leadingWidth: 125,
         title: const Text('My Basket'),
         centerTitle: true,
       ),
