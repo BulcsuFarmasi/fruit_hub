@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:fruit_hub/app_colors.dart';
+import 'package:fruit_hub/shared/app_colors.dart';
 
 class CustomBackButton extends StatelessWidget {
   const CustomBackButton({
@@ -17,7 +17,7 @@ class CustomBackButton extends StatelessWidget {
       style: ElevatedButton.styleFrom(
           padding: const EdgeInsets.all(6),
           primary: Colors.white,
-          onPrimary: textColor,
+          onPrimary: AppColors.textColor,
           shape: const RoundedRectangleBorder(
               borderRadius: BorderRadius.all(Radius.circular(100)))),
     );

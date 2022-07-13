@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:fruit_hub/app_decorations.dart';
-import 'package:fruit_hub/card_info.dart';
+import 'package:fruit_hub/features/basket/widgets/card_info.dart';
 
 class ShippingInfo extends StatelessWidget {
   const ShippingInfo({Key? key}) : super(key: key);
@@ -17,18 +16,18 @@ class ShippingInfo extends StatelessWidget {
         children: [
           const Text('Delivery Address', style: labelStyle,),
           const SizedBox(height: 16,),
-          const TextField(decoration: inputDecoration,),
+          const TextField(),
           const SizedBox(height: 24,),
           const Text('Number we can call', style: labelStyle,),
           const SizedBox(height: 16,),
-          const TextField(decoration: inputDecoration,),
+          const TextField(),
           const SizedBox(height: 40,),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               OutlinedButton(
                 onPressed: () {},
-                child: Text('Pay on delivery'),
+                child: const Text('Pay on delivery'),
               ),
               OutlinedButton(onPressed: () {
                 Navigator.of(context).pop();
@@ -38,7 +37,7 @@ class ShippingInfo extends StatelessWidget {
                     shape: const RoundedRectangleBorder(
                         borderRadius: BorderRadius.vertical(
                           top: Radius.circular(24),)));
-              }, child: Text('Pay with card'),)
+              }, child: const Text('Pay with card'),)
             ],
           )
         ],

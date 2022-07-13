@@ -1,6 +1,6 @@
 enum AppRoute {
 
-  foodDetail('/food-detail'),
+  productDetail('/product-detail'),
   welcome('/welcome'),
   basket('/basket'),
   successfulOrder('/successful-order'),

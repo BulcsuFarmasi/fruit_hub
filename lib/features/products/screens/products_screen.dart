@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:fruit_hub/app_colors.dart';
-import 'package:fruit_hub/app_decorations.dart';
-import 'package:fruit_hub/product.dart';
-import 'package:fruit_hub/recommended_product.dart';
+import 'package:fruit_hub/shared/app_colors.dart';
+import 'package:fruit_hub/features/products/widgets/product.dart';
+import 'package:fruit_hub/features/products/widgets/recommended_product.dart';
 
 class ProductsScreen extends StatelessWidget {
   const ProductsScreen({Key? key}) : super(key: key);
@@ -33,7 +32,7 @@ class ProductsScreen extends StatelessWidget {
                 ),
                 const Text(
                   'My Basket',
-                  style: TextStyle(color: textColor, fontSize: 10),
+                  style: TextStyle(color: AppColors.textColor, fontSize: 10),
                 ),
               ],
             ),
@@ -51,7 +50,7 @@ class ProductsScreen extends StatelessWidget {
                   text: const TextSpan(
                       style: TextStyle(
                           fontSize: 20,
-                          color: textColor,
+                          color: AppColors.textColor,
                           fontFamily: 'Brandon'),
                       children: [
                     TextSpan(text: 'Hello Tony, '),
@@ -60,16 +59,16 @@ class ProductsScreen extends StatelessWidget {
                         style: TextStyle(fontWeight: FontWeight.w500))
                   ])),
             ),
-            SizedBox(
+            const SizedBox(
               height: 24,
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                SizedBox(
+                const SizedBox(
                     width: 288,
                     child: TextField(
-                      decoration: inputDecoration.copyWith(
+                      decoration: InputDecoration(
                           prefixIcon: Icon(Icons.search),
                           hintText: 'Search for fruit salad combos'),
                     )),
@@ -80,10 +79,10 @@ class ProductsScreen extends StatelessWidget {
                 )
               ],
             ),
-            SizedBox(
+            const SizedBox(
               height: 40,
             ),
-            Text(
+            const Text(
               'Recommended Combo',
               style: TextStyle(fontSize: 24, fontWeight: FontWeight.w500),
             ),
@@ -108,11 +107,11 @@ class ProductsScreen extends StatelessWidget {
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(
+                    const Text(
                       'Hottest',
                       style: TextStyle(
                           fontSize: 24,
-                          color: textColor,
+                          color: AppColors.textColor,
                           fontWeight: FontWeight.w500),
                     ),
                     Container(
@@ -140,7 +139,7 @@ class ProductsScreen extends StatelessWidget {
                 )
               ],
             ),
-            SizedBox(height: 24,),
+            const SizedBox(height: 24,),
             SizedBox(
               height: 150,
               child: ListView(
@@ -151,7 +150,7 @@ class ProductsScreen extends StatelessWidget {
                           name: 'Quinoa fruit salad',
                           price: 10000,
                           imagePath: 'assets/images/quinoa.png'),
-                      backgroundColor: Color(0xFFFFFAEB)),
+                      backgroundColor: const Color(0xFFFFFAEB)),
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 16),
                     child: ProductView(
@@ -159,14 +158,14 @@ class ProductsScreen extends StatelessWidget {
                             name: 'Tropical fruit salad',
                             price: 10000,
                             imagePath: 'assets/images/tropical.png'),
-                        backgroundColor: Color(0xFFFEF0F0)),
+                        backgroundColor: const Color(0xFFFEF0F0)),
                   ),
                   ProductView(
                       product: Product(
                           name: 'Melon fruit salad',
                           price: 10000,
                           imagePath: 'assets/images/melon.png'),
-                      backgroundColor: Color(0xF1EFF6)),
+                      backgroundColor: const Color(0xFFF1EFF6)),
                 ],
               ),
             )

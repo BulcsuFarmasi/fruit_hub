@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:fruit_hub/app_colors.dart';
-import 'package:fruit_hub/main.dart';
+import 'package:fruit_hub/shared/app_colors.dart';
 
 class RecommendedProduct extends StatefulWidget {
   const RecommendedProduct({required this.product, Key? key}) : super(key: key);
@@ -27,8 +26,8 @@ class _RecommendedProductState extends State<RecommendedProduct> {
         width: 152,
         height: 183,
         decoration:
-            BoxDecoration(borderRadius: BorderRadius.circular(16), boxShadow: [
-          BoxShadow(
+            BoxDecoration(borderRadius: BorderRadius.circular(16), boxShadow: const [
+         BoxShadow(
               color: Color(0x0D202020), offset: Offset(2, 30), blurRadius: 60),
         ]),
         child: Column(
@@ -59,19 +58,19 @@ class _RecommendedProductState extends State<RecommendedProduct> {
                 ],
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 8,
             ),
             Align(
                 alignment: Alignment.center,
                 child: Text(
                   widget.product.name,
-                  style: TextStyle(
-                      color: textColor,
+                  style: const TextStyle(
+                      color: AppColors.textColor,
                       fontSize: 16,
                       fontWeight: FontWeight.w500),
                 )),
-            SizedBox(
+            const SizedBox(
               height: 8,
             ),
             Row(
@@ -84,9 +83,9 @@ class _RecommendedProductState extends State<RecommendedProduct> {
                       color: Theme.of(context).colorScheme.primary),
                 ),
                 Container(
-                  decoration: BoxDecoration(
+                  decoration: const BoxDecoration(
                     shape: BoxShape.circle,
-                    color: activeColor,
+                    color: AppColors.activeColor,
                   ),
                   width: 24,
                   height: 24,

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:fruit_hub/app_decorations.dart';
 
 class CardInfo extends StatelessWidget {
   const CardInfo({Key? key}) : super(key: key);
@@ -26,9 +25,7 @@ class CardInfo extends StatelessWidget {
                 ),
                 const SizedBox(
                   height: 56,
-                  child: TextField(
-                    decoration: inputDecoration,
-                  ),
+                  child: TextField(),
                 ),
                 const SizedBox(
                   height: 24,
@@ -43,7 +40,7 @@ class CardInfo extends StatelessWidget {
                 const SizedBox(
                   height: 56,
                   child: TextField(
-                    decoration: inputDecoration,
+
                   ),
                 ),
                 const SizedBox(
@@ -65,7 +62,7 @@ class CardInfo extends StatelessWidget {
                           SizedBox(
                             height: 56,
                             child: TextField(
-                              decoration: inputDecoration,
+
                             ),
                           ),
                         ],
@@ -88,7 +85,7 @@ class CardInfo extends StatelessWidget {
                         SizedBox(
                           height: 56,
                           child: TextField(
-                            decoration: inputDecoration,
+
                           ),
                         ),
                       ],
@@ -99,25 +96,25 @@ class CardInfo extends StatelessWidget {
             ),
           ),
           const SizedBox(
-            height: 24,
+            height: 16,
           ),
           Container(
               height: 96,
               decoration: BoxDecoration(
                   color: Theme.of(context).colorScheme.primary,
                   borderRadius:
-                      BorderRadius.vertical(top: Radius.circular(24))),
+                     const BorderRadius.vertical(top: Radius.circular(24))),
               child: Center(
                 child: ElevatedButton(
-                  child: Text('Complete Order'),
                   onPressed: () {
                     Navigator.of(context).pop();
                   },
                   style: ElevatedButton.styleFrom(
                     primary: Colors.white,
                     onPrimary: Theme.of(context).colorScheme.primary,
-                    fixedSize: const Size(137, 56),
+                    fixedSize: const Size(146, 56),
                   ),
+                  child: const Text('Complete Order'),
                 ),
               )),
         ],

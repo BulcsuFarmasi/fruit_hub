@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:fruit_hub/app_colors.dart';
-import 'package:fruit_hub/custom_back_button.dart';
-import 'package:fruit_hub/price_block.dart';
+import 'package:fruit_hub/shared/app_colors.dart';
+import 'package:fruit_hub/shared/widgets/custom_back_button.dart';
+import 'package:fruit_hub/features/product_detail/widgets/price_block.dart';
+import 'package:fruit_hub/features/product_detail/widgets/favorite_icon.dart';
 
 class ProductDetailScreen extends StatelessWidget {
   const ProductDetailScreen({Key? key}) : super(key: key);
@@ -26,7 +27,7 @@ class ProductDetailScreen extends StatelessWidget {
                 width: 176,
                 height: 176,
               ),
-              SizedBox(height: 24,),
+              const SizedBox(height: 24,),
               Expanded(
                 child: Container(
                   padding: const EdgeInsets.fromLTRB(24, 40, 24, 16),
@@ -40,7 +41,7 @@ class ProductDetailScreen extends StatelessWidget {
                     children: [
                       const Text(
                         'Quinoa Fruit Salad',
-                        style: TextStyle(fontSize: 32, color: textColor),
+                        style: TextStyle(fontSize: 32, color: AppColors.textColor),
                       ),
                       const SizedBox(
                         height: 32,
@@ -61,7 +62,7 @@ class ProductDetailScreen extends StatelessWidget {
                                       color: theme.colorScheme.primary, width: 2))),
                           child: const Text(
                             'One Pack Contains:',
-                            style: TextStyle(fontSize: 20, color: textColor),
+                            style: TextStyle(fontSize: 20, color: AppColors.textColor),
                           )),
                       const SizedBox(
                         height: 18,
@@ -70,7 +71,7 @@ class ProductDetailScreen extends StatelessWidget {
                           'Red Quinoa, Lime, Honey, Blueberries, Strawberries, Mango, Fresh mint.',
                           style: TextStyle(
                             fontSize: 16,
-                            color: textColor,
+                            color: AppColors.textColor,
                           )),
                       const SizedBox(
                         height: 20,
@@ -83,7 +84,7 @@ class ProductDetailScreen extends StatelessWidget {
                           'If you are looking for a new fruit salad to eat today, quinoa is the perfect brunch for you. make',
                           style: TextStyle(
                             fontSize: 14,
-                            color: textColor,
+                            color: AppColors.textColor,
                           )),
                       const SizedBox(
                         height: 39,
@@ -109,44 +110,6 @@ class ProductDetailScreen extends StatelessWidget {
               )
             ],
           ),
-      ),
-    );
-  }
-}
-
-class FavoriteIcon extends StatefulWidget {
-  const FavoriteIcon({
-    Key? key,
-  }) : super(key: key);
-
-  @override
-  State<FavoriteIcon> createState() => _FavoriteIconState();
-}
-
-class _FavoriteIconState extends State<FavoriteIcon> {
-  bool isFavorite = false;
-
-  void toggleFavorite() {
-    setState(() {
-      isFavorite = !isFavorite;
-    });
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    final theme = Theme.of(context);
-    return GestureDetector(
-      onTap: toggleFavorite,
-      child: Container(
-        decoration:
-            const BoxDecoration(shape: BoxShape.circle, color: activeColor),
-        width: 48,
-        height: 48,
-        child: Icon(
-          (isFavorite) ? Icons.favorite : Icons.favorite_outline,
-          size: 24,
-          color: theme.colorScheme.primary,
-        ),
       ),
     );
   }
