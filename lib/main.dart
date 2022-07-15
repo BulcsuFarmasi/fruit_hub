@@ -22,50 +22,57 @@ class App extends StatelessWidget {
     return MaterialApp(
       title: 'Fruit Hub',
       theme: ThemeData(
-        primarySwatch: AppColors.primaryColor,
-        fontFamily: 'Brandon',
-        elevatedButtonTheme: ElevatedButtonThemeData(
-            style: ElevatedButton.styleFrom(
-                onPrimary: Colors.white,
-                textStyle: const TextStyle(fontFamily: 'Brandon', fontSize: 16),
-                elevation: 0.0)),
-        outlinedButtonTheme: OutlinedButtonThemeData(
+          primarySwatch: AppColors.primaryColor,
+          fontFamily: 'Brandon',
+          elevatedButtonTheme: ElevatedButtonThemeData(
+              style: ElevatedButton.styleFrom(
+                  onPrimary: Colors.white,
+                  textStyle: const TextStyle(
+                      fontFamily: 'Brandon', fontSize: 16),
+                  elevation: 0.0,
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10)))),
+          outlinedButtonTheme: OutlinedButtonThemeData(
             style: OutlinedButton.styleFrom(
-          side: BorderSide(color: AppColors.primaryColor.shade500),
-          textStyle: const TextStyle(
-              fontFamily: 'Brandon', fontSize: 16, fontWeight: FontWeight.w500),
-        )),
-        appBarTheme: const AppBarTheme(
-            foregroundColor: Colors.white,
-            elevation: 0.0,
-            titleTextStyle: TextStyle(
-                color: Colors.white,
-                fontWeight: FontWeight.w500,
-                fontFamily: 'Brandon',
-                fontSize: 24)),
-        inputDecorationTheme: const InputDecorationTheme(
-            enabledBorder: OutlineInputBorder(
-                borderSide: BorderSide.none,
-                borderRadius: BorderRadius.all(Radius.circular(10))),
-            focusedBorder: OutlineInputBorder(
-                borderSide: BorderSide.none,
-                borderRadius: BorderRadius.all(Radius.circular(10))),
-            fillColor: AppColors.inputColor,
-            filled: true),
-      ),
-      home: HomeScreen(),
-      routes: {
-        "${AppRoute.productDetail}": (BuildContext context) =>
-            const ProductDetailScreen(),
-        "${AppRoute.welcome}": (BuildContext context) => const WelcomeScreen(),
-        "${AppRoute.basket}": (BuildContext context) => BasketScreen(),
-        "${AppRoute.successfulOrder}": (BuildContext context) =>
-            const SuccessfulOrderScreen(),
-        "${AppRoute.orderTracking}": (BuildContext context) =>
-            const OrderTrackingScreen(),
-        "${AppRoute.products}": (BuildContext context) =>
-            const ProductsScreen(),
-      },
+              side: BorderSide(color: AppColors.primaryColor.shade500),
+              textStyle: const TextStyle(
+                  fontFamily: 'Brandon',
+                  fontSize: 16,
+                  fontWeight: FontWeight.w500),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(10),
+              ),),),
+          appBarTheme: const AppBarTheme(
+          foregroundColor: Colors.white,
+          elevation: 0.0,
+          titleTextStyle: TextStyle(
+              color: Colors.white,
+              fontWeight: FontWeight.w500,
+              fontFamily: 'Brandon',
+              fontSize: 24)),
+      inputDecorationTheme: const InputDecorationTheme(
+          enabledBorder: OutlineInputBorder(
+              borderSide: BorderSide.none,
+              borderRadius: BorderRadius.all(Radius.circular(10))),
+          focusedBorder: OutlineInputBorder(
+              borderSide: BorderSide.none,
+              borderRadius: BorderRadius.all(Radius.circular(10))),
+          fillColor: AppColors.inputColor,
+          filled: true),
+    ),
+    home: HomeScreen(),
+    routes: {
+    "${AppRoute.productDetail}": (BuildContext context) =>
+    const ProductDetailScreen(),
+    "${AppRoute.welcome}": (BuildContext context) => const WelcomeScreen(),
+    "${AppRoute.basket}": (BuildContext context) => BasketScreen(),
+    "${AppRoute.successfulOrder}": (BuildContext context) =>
+    const SuccessfulOrderScreen(),
+    "${AppRoute.orderTracking}": (BuildContext context) =>
+    const OrderTrackingScreen(),
+    "${AppRoute.products}": (BuildContext context) =>
+    const ProductsScreen(),
+    },
     );
   }
 }
