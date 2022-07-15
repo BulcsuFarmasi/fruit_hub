@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:fruit_hub/app_colors.dart';
-import 'package:fruit_hub/app_decorations.dart';
+import 'package:fruit_hub/shared/app_colors.dart';
 
 class WelcomeScreen extends StatefulWidget {
   const WelcomeScreen({Key? key}) : super(key: key);
@@ -71,7 +70,7 @@ class StartPage extends StatelessWidget {
                 style: TextStyle(
                     fontSize: 20,
                     fontWeight: FontWeight.w500,
-                    color: textColor),
+                    color: AppColors.textColor),
               ),
               const SizedBox(
                 height: 8,
@@ -81,15 +80,15 @@ class StartPage extends StatelessWidget {
                 style: TextStyle(
                     fontSize: 16,
                     fontWeight: FontWeight.w400,
-                    color: textColor),
+                    color: AppColors.textColor),
               ),
               const SizedBox(
                 height: 58,
               ),
               ElevatedButton(
                 onPressed: onNext,
+                style: ElevatedButton.styleFrom(minimumSize: const Size.fromHeight(56)),
                 child: const Text('Let\'s Continue'),
-                style: ElevatedButton.styleFrom(fixedSize: Size(327, 56)),
               )
             ]),
           )
@@ -132,13 +131,12 @@ class InputPage extends StatelessWidget {
                       style: TextStyle(
                           fontSize: 20,
                           fontWeight: FontWeight.w500,
-                          color: textColor),
+                          color: AppColors.textColor),
                     ),
                     const SizedBox(
                       height: 8,
                     ),
                     TextField(
-                      decoration: inputDecoration,
                       onEditingComplete: () {
                         FocusScope.of(context).unfocus();
                       },
@@ -148,8 +146,8 @@ class InputPage extends StatelessWidget {
                     ),
                     ElevatedButton(
                       onPressed: onSubmit,
+                      style: ElevatedButton.styleFrom(minimumSize: const Size.fromHeight(56)),
                       child: const Text('Start Ordering'),
-                      style: ElevatedButton.styleFrom(fixedSize: Size(327, 56)),
                     )
                   ]),
             )

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:fruit_hub/app_colors.dart';
-import 'package:fruit_hub/recommended_product.dart';
+import 'package:fruit_hub/shared/app_colors.dart';
+import 'package:fruit_hub/features/products/widgets/recommended_product.dart';
 
 class ProductView extends StatefulWidget {
   const ProductView(
@@ -28,7 +28,7 @@ class _ProductState extends State<ProductView> {
     return Container(
         width: 140,
         height: 150,
-        padding: EdgeInsets.all(10),
+        padding: const EdgeInsets.all(10),
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(10),
             color: widget.backgroundColor),
@@ -58,19 +58,19 @@ class _ProductState extends State<ProductView> {
                 ],
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 8,
             ),
             Align(
                 alignment: Alignment.center,
                 child: Text(
                   widget.product.name,
-                  style: TextStyle(
-                      color: textColor,
+                  style: const TextStyle(
+                      color: AppColors.textColor,
                       fontSize: 14,
                       fontWeight: FontWeight.w500),
                 )),
-            SizedBox(
+            const SizedBox(
               height: 4,
             ),
             Row(
@@ -83,9 +83,9 @@ class _ProductState extends State<ProductView> {
                       color: Theme.of(context).colorScheme.primary),
                 ),
                 Container(
-                  decoration: BoxDecoration(
+                  decoration: const BoxDecoration(
                     shape: BoxShape.circle,
-                    color: activeColor,
+                    color: AppColors.activeColor,
                   ),
                   width: 24,
                   height: 24,

@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:fruit_hub/app_routes.dart';
+import 'package:fruit_hub/shared/app_routes.dart';
 
 class HomeScreen extends StatelessWidget {
   HomeScreen({Key? key}) : super(key: key);
 
   final homeButtons = [
-    HomeButtonDetail('Food Detail', AppRoute.foodDetail),
+    HomeButtonDetail('Product Detail', AppRoute.productDetail),
     HomeButtonDetail('Welcome', AppRoute.welcome),
     HomeButtonDetail('Basket', AppRoute.basket),
     HomeButtonDetail('Successful Order', AppRoute.successfulOrder),
@@ -16,7 +16,7 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(title: Text('Fruit Bar Demo'),),
+        appBar: AppBar(title: const Text('Fruit Bar Demo'),),
         body: Column(
             children: homeButtons.map((homeButton) =>  ElevatedButton(
                 onPressed: () {

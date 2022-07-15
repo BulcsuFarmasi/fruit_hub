@@ -1,7 +1,7 @@
-import 'package:intl/intl.dart';
-
 import 'package:flutter/material.dart';
-import 'package:fruit_hub/app_colors.dart';
+import 'package:fruit_hub/features/product_detail/widgets/quantity_stepper.dart';
+import 'package:fruit_hub/shared/app_colors.dart';
+import 'package:intl/intl.dart';
 
 class PriceBlock extends StatefulWidget {
   const PriceBlock({
@@ -49,7 +49,7 @@ class _PriceBlockState extends State<PriceBlock> {
         ),
         Text(
           '$quantity',
-          style: const TextStyle(fontSize: 24, color: textColor),
+          style: const TextStyle(fontSize: 24, color: AppColors.textColor),
         ),
         const SizedBox(
           width: 24,
@@ -65,39 +65,6 @@ class _PriceBlockState extends State<PriceBlock> {
           style: const TextStyle(fontSize: 24, fontWeight: FontWeight.w500),
         )
       ],
-    );
-  }
-}
-
-class QuantityStepper extends StatelessWidget {
-  const QuantityStepper({
-    Key? key,
-    required this.icon,
-    required this.onPressed,
-    required this.active,
-  }) : super(key: key);
-
-  final IconData icon;
-  final VoidCallback onPressed;
-  final bool active;
-
-  @override
-  Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: active ? onPressed : null,
-      child: Container(
-        decoration: BoxDecoration(
-            shape: BoxShape.circle,
-            color: active ? activeColor : null,
-            border: active ? null : Border.all(color: borderColor)),
-        width: 32,
-        height: 32,
-        child: Icon(
-          icon,
-          size: 16,
-          color: active ? Theme.of(context).colorScheme.primary : borderColor,
-        ),
-      ),
     );
   }
 }

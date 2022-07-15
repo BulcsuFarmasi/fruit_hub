@@ -1,26 +1,26 @@
 import 'package:flutter/material.dart';
-import 'package:fruit_hub/app_colors.dart';
-import 'package:fruit_hub/custom_back_button.dart';
-import 'package:fruit_hub/shipping_info.dart';
+import 'package:fruit_hub/shared/app_colors.dart';
+import 'package:fruit_hub/shared/widgets/custom_back_button.dart';
+import 'package:fruit_hub/features/basket/widgets/shipping_info.dart';
 
 class BasketScreen extends StatelessWidget {
   BasketScreen({Key? key}) : super(key: key);
 
   final List<BasketItem> basketItems = [
     BasketItem(
-        imageBackground: Color(0xFFFFFAEB),
+        imageBackground: const Color(0xFFFFFAEB),
         imagePath: 'assets/images/quinoa.png',
         name: 'Quinoa fruit salad',
         quantity: 2,
         price: 20000),
     BasketItem(
-        imageBackground: Color(0xFFF1FFE),
+        imageBackground: const Color(0xFFF1EFF6),
         imagePath: 'assets/images/melon.png',
         name: 'Melon fruit salad',
         quantity: 2,
         price: 20000),
     BasketItem(
-        imageBackground: Color(0xFFFEF0F0),
+        imageBackground: const Color(0xFFFEF0F0),
         imagePath: 'assets/images/tropical.png',
         name: 'Tropical fruit salad',
         quantity: 2,
@@ -34,7 +34,7 @@ class BasketScreen extends StatelessWidget {
         toolbarHeight: 142,
         leading: Container(
           padding: const EdgeInsets.symmetric(vertical: 50),
-          margin: EdgeInsets.only(left: 24),
+          margin: const EdgeInsets.only(left: 24),
           child: const CustomBackButton(),
         ),
         leadingWidth: 125,
@@ -43,7 +43,7 @@ class BasketScreen extends StatelessWidget {
       ),
       body: Column(
         children: [
-          SizedBox(
+          const SizedBox(
             height: 49,
           ),
           Expanded(
@@ -51,7 +51,7 @@ class BasketScreen extends StatelessWidget {
                 itemBuilder: (BuildContext context, int index) =>
                     BasketListItem(basketItem: basketItems[index]),
                 separatorBuilder: (BuildContext context, int index) =>
-                    Divider(),
+                    const Divider(),
                 itemCount: basketItems.length),
           ),
           Padding(
@@ -71,7 +71,7 @@ class BasketScreen extends StatelessWidget {
                         style: TextStyle(
                             fontSize: 24,
                             fontWeight: FontWeight.w500,
-                            color: textColor)),
+                            color: AppColors.textColor)),
                   ],
                 ),
                 ElevatedButton(
@@ -85,13 +85,13 @@ class BasketScreen extends StatelessWidget {
                           return const ShippingInfo();
                         });
                   },
-                  style: ElevatedButton.styleFrom(fixedSize: Size(199, 56)),
+                  style: ElevatedButton.styleFrom(fixedSize: const Size(199, 56)),
                   child: const Text('Checkout'),
                 )
               ],
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 47,
           )
         ],
@@ -113,7 +113,7 @@ class BasketListItem extends StatelessWidget {
         height: 64,
         decoration: BoxDecoration(
           color: basketItem.imageBackground,
-          borderRadius: BorderRadius.all(Radius.circular(10)),
+          borderRadius: BorderRadius.circular(10),
         ),
         child: Center(
           child: Image.asset(
@@ -124,11 +124,11 @@ class BasketListItem extends StatelessWidget {
       ),
       title: Text(
         basketItem.name,
-        style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
+        style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
       ),
       subtitle: Text('${basketItem.quantity}packs'),
       trailing: Text('${basketItem.price}Ft',
-          style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500)),
+          style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w500)),
     );
   }
 }
