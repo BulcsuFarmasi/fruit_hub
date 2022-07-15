@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 import 'package:fruit_hub/shared/app_colors.dart';
 
 class RecommendedProduct extends StatefulWidget {
@@ -11,6 +12,8 @@ class RecommendedProduct extends StatefulWidget {
 }
 
 class _RecommendedProductState extends State<RecommendedProduct> {
+
+  final numberFormat = NumberFormat.decimalPattern();
 
   bool isFavorite = false;
 
@@ -77,7 +80,7 @@ class _RecommendedProductState extends State<RecommendedProduct> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
-                  '${widget.product.price}Ft',
+                  '${numberFormat.format(widget.product.price)}Ft',
                   style: TextStyle(
                       fontSize: 14,
                       color: Theme.of(context).colorScheme.primary),
